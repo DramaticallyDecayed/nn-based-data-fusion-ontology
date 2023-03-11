@@ -1,4 +1,4 @@
-# Ontology for Datafusion Systems Built on Neural Network
+# Ontology for Data Fusion Systems Built on Neural Network
 
 Note that the project is on the very early stage of development. In other words it is in progress and everything can be changed...
 
@@ -10,7 +10,7 @@ The goals of the ontology is defined by the following competency questions:
 
 ## Ontology Usage
 
-Examples of DL-queries that can be used to answer the competency questions questions:
+Examples of DL-queries that can be used to answer the competency questions:
 
 1. What kind of components carries the given set of indicators?
     * Example 1:
