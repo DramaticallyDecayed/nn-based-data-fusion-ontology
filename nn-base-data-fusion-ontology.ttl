@@ -1,0 +1,345 @@
+@prefix : <http://jlu-sai.github.io/nn-based-df/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://jlu-sai.github.io/nn-based-df/ontology> .
+
+<http://jlu-sai.github.io/nn-based-df/ontology> rdf:type owl:Ontology ;
+                                                 owl:versionIRI <http://jlu-sai.github.io/nn-based-df/ontology/0.0.1> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#carries
+:carries rdf:type owl:ObjectProperty ;
+         rdfs:range :DFIndicator .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#develops
+:develops rdf:type owl:ObjectProperty ;
+          rdfs:domain :Project ;
+          rdfs:range :DFComponent ;
+          rdfs:comment "develops" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#has-reference
+:has-reference rdf:type owl:ObjectProperty ;
+               rdfs:label "has reference" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#implements
+:implements rdf:type owl:ObjectProperty ;
+            rdfs:domain :DFComponent ;
+            rdfs:range :NeuralNetwork ;
+            rdfs:comment "implements" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#is-applied-to
+:is-applied-to rdf:type owl:ObjectProperty ;
+               rdfs:label "is applied to" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#has-citation
+:has-citation rdf:type owl:DatatypeProperty ;
+              rdfs:label "has citation" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#has-link
+:has-link rdf:type owl:DatatypeProperty ;
+          rdfs:label "has link" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#AppicationArea
+:AppicationArea rdf:type owl:Class ;
+                rdfs:label "Application Area" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#BackpropagationNeuralNetwork
+:BackpropagationNeuralNetwork rdf:type owl:Class ;
+                              rdfs:subClassOf :NeuralNetwork ;
+                              rdfs:label "Backpropagation Neural Network" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#ComputationalComplexity
+:ComputationalComplexity rdf:type owl:Class ;
+                         rdfs:subClassOf :DFIndicator ;
+                         rdfs:label "Computational Complexity" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#DFComponent
+:DFComponent rdf:type owl:Class ;
+             rdfs:label "DF Component" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#DFIndicator
+:DFIndicator rdf:type owl:Class ;
+             rdfs:label "DF Indicator" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#DeepNeuralNetwork
+:DeepNeuralNetwork rdf:type owl:Class ;
+                   rdfs:subClassOf :NeuralNetwork ;
+                   rdfs:label "Deep Neural Network" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#Efficiency
+:Efficiency rdf:type owl:Class ;
+            rdfs:subClassOf :DFIndicator ;
+            rdfs:label "Efficiency" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#Extensibility
+:Extensibility rdf:type owl:Class ;
+               rdfs:subClassOf :DFIndicator ;
+               rdfs:label "Extensibility" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#NeuralNetwork
+:NeuralNetwork rdf:type owl:Class ;
+               rdfs:label "Neural Network" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#Privacy
+:Privacy rdf:type owl:Class ;
+         rdfs:subClassOf :DFIndicator ;
+         rdfs:label "Privacy" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#Project
+:Project rdf:type owl:Class ;
+         rdfs:label "Project" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#Quality
+:Quality rdf:type owl:Class ;
+         rdfs:subClassOf :DFIndicator ;
+         rdfs:label "Quality" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#RecommendationSystem
+:RecommendationSystem rdf:type owl:Class ;
+                      rdfs:subClassOf :AppicationArea ;
+                      rdfs:label "Recommendation System" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#Reference
+:Reference rdf:type owl:Class ;
+           rdfs:label "Reference" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#Robustness
+:Robustness rdf:type owl:Class ;
+            rdfs:subClassOf :DFIndicator ;
+            rdfs:label "Robustness" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#SpeechRecognition
+:SpeechRecognition rdf:type owl:Class ;
+                   rdfs:subClassOf :AppicationArea ;
+                   rdfs:label "Speech Recognition" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#Stability
+:Stability rdf:type owl:Class ;
+           rdfs:subClassOf :DFIndicator ;
+           rdfs:label "Stability" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#TestedWithRealWorldData
+:TestedWithRealWorldData rdf:type owl:Class ;
+                         rdfs:subClassOf :DFIndicator ;
+                         rdfs:label "Tested With Real World Data" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#TrafficPrediction
+:TrafficPrediction rdf:type owl:Class ;
+                   rdfs:subClassOf :AppicationArea ;
+                   rdfs:label "Traffic Prediction" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#WeatherForecasting
+:WeatherForecasting rdf:type owl:Class ;
+                    rdfs:subClassOf :AppicationArea ;
+                    rdfs:label "Weather Forecasting" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#cape
+:cape rdf:type owl:NamedIndividual ,
+               :Project ,
+               [ rdf:type owl:Restriction ;
+                 owl:onProperty :is-applied-to ;
+                 owl:someValuesFrom :RecommendationSystem
+               ] ;
+      :develops :cape-component ;
+      :has-reference :cape-reference ;
+      rdfs:label "CAPE" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#cape-component
+:cape-component rdf:type owl:NamedIndividual ,
+                         [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                  owl:complementOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :carries ;
+                                                                     owl:someValuesFrom :ComputationalComplexity
+                                                                   ]
+                                                ]
+                                                [ rdf:type owl:Class ;
+                                                  owl:complementOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :carries ;
+                                                                     owl:someValuesFrom :Extensibility
+                                                                   ]
+                                                ]
+                                                [ rdf:type owl:Class ;
+                                                  owl:complementOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :carries ;
+                                                                     owl:someValuesFrom :Privacy
+                                                                   ]
+                                                ]
+                                                [ rdf:type owl:Class ;
+                                                  owl:complementOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :carries ;
+                                                                     owl:someValuesFrom :Robustness
+                                                                   ]
+                                                ]
+                                                [ rdf:type owl:Class ;
+                                                  owl:complementOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :carries ;
+                                                                     owl:someValuesFrom :Stability
+                                                                   ]
+                                                ]
+                                                [ rdf:type owl:Class ;
+                                                  owl:complementOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :carries ;
+                                                                     owl:someValuesFrom :TestedWithRealWorldData
+                                                                   ]
+                                                ]
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :carries ;
+                                                  owl:someValuesFrom :Efficiency
+                                                ]
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :carries ;
+                                                  owl:someValuesFrom :Quality
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :implements ;
+                           owl:someValuesFrom :DeepNeuralNetwork
+                         ] ;
+                rdfs:label "CAPE Component" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#cape-reference
+:cape-reference rdf:type owl:NamedIndividual ,
+                         :Reference ;
+                :has-citation "Chang, B., Park, Y., Park, D., Kim, S., & Kang, J. (2018, July). Content-aware hierarchical point-of-interest embedding model for successive poi recommendation. In IJCAI (Vol. 2018, p. 27th)." ;
+                :has-link "https://dmis.korea.ac.kr/cape" ;
+                rdfs:label "CAPE Reference" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#dmlp
+:dmlp rdf:type owl:NamedIndividual ,
+               :Project ,
+               [ rdf:type owl:Restriction ;
+                 owl:onProperty :is-applied-to ;
+                 owl:someValuesFrom :SpeechRecognition
+               ] ;
+      :develops :dmlp-component ;
+      :has-reference :dmlp-reference ;
+      rdfs:label "DMLP" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#dmlp-component
+:dmlp-component rdf:type owl:NamedIndividual ,
+                         [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                  owl:complementOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :carries ;
+                                                                     owl:someValuesFrom :Extensibility
+                                                                   ]
+                                                ]
+                                                [ rdf:type owl:Class ;
+                                                  owl:complementOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :carries ;
+                                                                     owl:someValuesFrom :Privacy
+                                                                   ]
+                                                ]
+                                                [ rdf:type owl:Class ;
+                                                  owl:complementOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :carries ;
+                                                                     owl:someValuesFrom :Robustness
+                                                                   ]
+                                                ]
+                                                [ rdf:type owl:Class ;
+                                                  owl:complementOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :carries ;
+                                                                     owl:someValuesFrom :TestedWithRealWorldData
+                                                                   ]
+                                                ]
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :carries ;
+                                                  owl:someValuesFrom :ComputationalComplexity
+                                                ]
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :carries ;
+                                                  owl:someValuesFrom :Efficiency
+                                                ]
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :carries ;
+                                                  owl:someValuesFrom :Quality
+                                                ]
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :carries ;
+                                                  owl:someValuesFrom :Stability
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :implements ;
+                           owl:someValuesFrom :DeepNeuralNetwork
+                         ] ;
+                rdfs:label "DMLP Component" .
+
+
+###  http://jlu-sai.github.io/nn-based-df/ontology#dmlp-reference
+:dmlp-reference rdf:type owl:NamedIndividual ;
+                :has-citation "Mustafa MK, Allen T, Appiah K (2017) A comparative review of dynamic neural networks and hidden Markov model methods for mobile on-device speech recognition. Neural Comput Appl 31:891-899." ;
+                :has-link "https://doi.org/10.1007/s00521-017-3028-2" ;
+                rdfs:label "DMLP Reference" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ComputationalComplexity
+                :Efficiency
+                :Extensibility
+                :Privacy
+                :Quality
+                :Robustness
+                :Stability
+                :TestedWithRealWorldData
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
